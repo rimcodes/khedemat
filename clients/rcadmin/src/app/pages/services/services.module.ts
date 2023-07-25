@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ServicesRoutingModule } from './services-routing.module';
 import { ServicesComponent } from './services.component';
 import { ServiceFormComponent } from './service-form/service-form.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ServiceFormComponent } from './service-form/service-form.component';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    ServicesRoutingModule
+    ServicesRoutingModule,
+    MatButtonModule
   ]
 })
 export class ServicesModule { }

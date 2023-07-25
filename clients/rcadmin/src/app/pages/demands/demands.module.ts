@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { DemandsRoutingModule } from './demands-routing.module';
 import { DemandsComponent } from './demands.component';
 import { DemandFormComponent } from './demand-form/demand-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +20,8 @@ import { DemandFormComponent } from './demand-form/demand-form.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     DemandsRoutingModule,
     MatTableModule,
     MatCardModule,

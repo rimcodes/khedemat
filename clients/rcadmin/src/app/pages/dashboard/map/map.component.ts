@@ -91,18 +91,18 @@ export class MapComponent implements OnInit, OnChanges {
     if (this.workers) {
       // show workers
       this.workers.forEach((provider, index) => {
-        let workerCords = provider.cords?.replace('(', '').replace(')', '');
+        let workerCords = provider.location?.replace('(', '').replace(')', '');
         const workersCordsArray = workerCords?.split(', ');
         if (workersCordsArray) {
-          const cords = new google.maps.LatLng(
+          const location = new google.maps.LatLng(
             +workersCordsArray[0],
             +workersCordsArray[1]
           );
 
-          // this.usersPositions.push(cords);
+          // this.usersPositions.push(location);
           const request: google.maps.DirectionsRequest = {
             origin: this.clientPosition,
-            destination: cords,
+            destination: location,
             travelMode: google.maps.TravelMode.DRIVING,
           };
 
@@ -114,7 +114,7 @@ export class MapComponent implements OnInit, OnChanges {
                 response.result
                 return response.result
               })),
-            position: cords,
+            position: location,
             options: {
               polylineOptions: { strokeColor: COLORS[index] },
               markerOptions: { visible: false },
@@ -132,8 +132,8 @@ export class MapComponent implements OnInit, OnChanges {
   showClient() {
     if (this.client) {
       // Show the client
-      const cords = this.client.cords?.replace('(', '').replace(')', '');
-      const cordsArray = cords?.split(', ');
+      const location = this.client.location?.replace('(', '').replace(')', '');
+      const cordsArray = location?.split(', ');
       if (cordsArray) {
         this.clientPosition = new google.maps.LatLng(
           +cordsArray[0],

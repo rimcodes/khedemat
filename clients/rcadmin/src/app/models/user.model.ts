@@ -1,19 +1,14 @@
-import { Promotion } from "./promotion.model";
-import { Service } from "./service.model";
-
 export class User {
-  id!: string;
-  username!: string;
+  id?: string;
+  name!: string;
   password?: string;
-  role!: string;
+  role!: 'client' | 'admin' | 'worker';
   active!: boolean;
-  phone?: string;
+  phone!: string;
   address?: string;
-  profile?: string;
-  cords?: string;
+  image?: string;
+  location?: string;
   images?: string[];
-  promos?: Promotion[];
-  services?: string[];
-  createdAt!: string;
-  updatedAt!: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

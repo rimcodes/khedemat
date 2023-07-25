@@ -1,8 +1,8 @@
 <mat-list>
   <div mat-subheader>Admins</div>
-  <mat-list-item class="border-b-2"  *ngFor="let item of admins">
-    <img matListItemAvatar [src]="item.profile" />
-    <div matListItemTitle>{{ item.username }}</div>
+  <mat-list-item class="border-b-2"  *ngFor="let item of admins$ |async">
+    <img matListItemAvatar [src]="item.image" />
+    <div matListItemTitle>{{ item.name }}</div>
     <div matListItemLine>{{ item.updatedAt | date }}</div>
 
     <div matListItemMeta>

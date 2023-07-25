@@ -26,6 +26,14 @@ export class UsersService {
   getWorkers() {
     return this.http.get<User[]>(`${this.usersApiUrl}/workers`)
   }
+  // Getting the workers
+  getClients() {
+    return this.http.get<User[]>(`${this.usersApiUrl}/clients`)
+  }
+  // Getting the workers
+  getAdmins() {
+    return this.http.get<User[]>(`${this.usersApiUrl}/admins`)
+  }
 
   createUser(userFormData: FormData) {
     // let object: any = {}

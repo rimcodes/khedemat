@@ -1,17 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsersRoutingModule } from './users-routing.module';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule  } from '@angular/material/select'
+import { MatExpansionModule } from '@angular/material/expansion'
 
-import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { ClientsComponent } from './clients/clients.component';
 import { WorkersComponent } from './workers/workers.component';
 import { AdminsComponent } from './admins/admins.component';
 import { UserItemComponent } from './user-item/user-item.component';
-import { MatIconModule } from '@angular/material/icon';
+import { LocationPickerComponent } from './location-picker/location-picker.component';
+import { MatButtonModule } from '@angular/material/button';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,14 +32,27 @@ import { MatIconModule } from '@angular/material/icon';
     ClientsComponent,
     WorkersComponent,
     AdminsComponent,
-    UserItemComponent
+    UserItemComponent,
+    LocationPickerComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientJsonpModule,
+    HttpClientModule,
     UsersRoutingModule,
+    GoogleMapsModule,
     MatTabsModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatExpansionModule,
+    MatButtonModule
   ]
 })
 export class UsersModule { }

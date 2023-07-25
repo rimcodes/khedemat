@@ -3,14 +3,15 @@ import { User } from "./user.model";
 
 export class Demand {
   id!: string;
-  user!: User;
-  worker?: User;
   service!: Service;
+  user?: User;
+  client?: User;
   title?: string;
   details?: string;
   date?: string;
-  address?: string;
   status?: string;
-  createdAt!: string;
-  updatedAt!: string;
+  active!: boolean;
+  location?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

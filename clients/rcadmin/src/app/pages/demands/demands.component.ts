@@ -1,7 +1,15 @@
-import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Component } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { Observable } from 'rxjs';
+import { Demand } from 'src/app/models/demand.model';
+import { DemandsService } from 'src/app/services/demands.service';
 
 export interface PeriodicElement {
   name: string;
@@ -108,20 +116,157 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./demands.component.css'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ),
     ]),
   ],
 })
-export class DemandsComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  // dataSource = ELEMENT_DATA;
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+export class DemandsComponent implements OnInit {
+  demands: Demand[] = [
+    {
+      id: 'd1',
+      service: {
+        id: 's1',
+        user: {
+          id: 'u1',
+          name: 'sidi',
+          role: 'worker',
+          active: true,
+          phone: '41234567',
+        },
+        category: {
+          id: 'c1',
+          title: 'Painting',
+          details: 'Painting houses and offices',
+          active: true,
+          image: 'assets/holders/cat2.jpg',
+        },
+        title: 'Painting',
+        image: 'assets/holders/cat1.png'
+      },
+      client: {
+        id: 'u1',
+        name: 'sidi',
+        role: 'worker',
+        active: true,
+        phone: '41234567',
+      },
+      user: {
+        id: 'u2',
+        name: 'mohamed',
+        role: 'client',
+        active: true,
+        phone: '41234567',
+      },
+      title: 'Painting demand form Arrafat',
+      active: true,
+    },
+    {
+      id: 'd2',
+      service: {
+        id: 's1',
+        user: {
+          id: 'u3',
+          name: 'hamed',
+          role: 'worker',
+          active: true,
+          phone: '22112233',
+        },
+        category: {
+          id: 'c2',
+          title: 'pluming',
+          details: 'plumming houses and offices',
+          active: true,
+          image: 'assets/holders/cat2.jpg',
+        },
+        title: 'Painting',
+        image: 'assets/holders/cat2.jpg'
+      },
+      client: {
+        id: 'u1',
+        name: 'sidi',
+        role: 'worker',
+        active: true,
+        phone: '41234567',
+      },
+      user: {
+        id: 'u2',
+        name: 'mohamed',
+        role: 'client',
+        active: true,
+        phone: '41234567',
+      },
+      title: 'Painting demand form Arrafat',
+      active: true,
+    },
+    {
+      id: 'd2',
+      service: {
+        id: 's1',
+        user: {
+          id: 'u1',
+          name: 'sidi',
+          role: 'worker',
+          active: true,
+          phone: '41234567',
+        },
+        category: {
+          id: 'c1',
+          title: 'Painting',
+          details: 'Painting houses and offices',
+          active: true,
+          image: 'assets/holders/cat2.jpg',
+        },
+        title: 'Painting',
+        image: 'assets/holders/cat3.jpg'
+      },
+      client: {
+        id: 'u1',
+        name: 'sidi',
+        role: 'worker',
+        active: true,
+        phone: '41234567',
+      },
+      user: {
+        id: 'u2',
+        name: 'mohamed',
+        role: 'client',
+        active: true,
+        phone: '41234567',
+      },
+      title: 'Painting demand form Arrafat',
+      active: true,
+    },
+  ];
 
-  columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
+  // displayedColumns: string[] = ['title', 'client name', 'worker name', 'date', 'last update'];
+  // dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(this.demands);
+
+  columnsToDisplay = ['id', 'title', 'service', 'client', 'worker', 'updated'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement!: PeriodicElement | null;
+
+  constructor(private demandsService: DemandsService) {}
+
+  ngOnInit(): void {
+    // this.getDemands()
+  }
+
+  getDemands() {
+    this.demandsService.getAllDemands().subscribe({
+      next: (res) => {
+        this.demands = res;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

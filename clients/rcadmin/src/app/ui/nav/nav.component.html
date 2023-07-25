@@ -27,22 +27,22 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>rcadmin</span>
+      <span>RCAdmin</span>
       <span class="flex-auto"></span>
-      <button
+      <div class="flex items-center gap-2">
+        <img src="assets/holders/user.png" width="48" height="48" alt="user profile" class="rounded-full">
+        <div class="flex flex-col justify-center">
+          <span class="text-lg">Mahmoud</span>
+          <span class="text-sm text-neutral-500">Admin</span>
+        </div>
+      </div>
+      <!-- <button
         mat-icon-button
         class="example-icon favorite-icon"
         aria-label="Example icon-button with heart icon"
       >
         <mat-icon>favorite</mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with share icon"
-      >
-        <mat-icon>share</mat-icon>
-      </button>
+      </button> -->
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>

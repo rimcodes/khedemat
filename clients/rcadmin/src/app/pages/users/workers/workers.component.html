@@ -1,8 +1,16 @@
 <mat-list>
-  <div mat-subheader>Workers</div>
-  <mat-list-item class="border-b-2"  *ngFor="let item of workers">
-    <img matListItemAvatar [src]="item.profile" />
-    <div matListItemTitle>{{ item.username }}</div>
+  <div mat-subheader class="relative mb-4">
+    <div class="text-xl">Workers</div>
+
+    <div class="absolute -top-2 right-0">
+      <button mat-mini-fab color="clear" [routerLink]="['', 'users', 'form']">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+  <mat-list-item class="border-b-2"  *ngFor="let item of workers$ | async">
+    <img matListItemAvatar [src]="item.image" />
+    <div matListItemTitle>{{ item.name }}</div>
     <div matListItemLine>{{ item.updatedAt | date }}</div>
 
     <div matListItemMeta>

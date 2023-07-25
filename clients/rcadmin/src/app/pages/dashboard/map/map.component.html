@@ -25,8 +25,8 @@
         ></map-marker>
         <map-info-window #infoWindow="mapInfoWindow">
           <div class="w-full flex flex-col justify-center items-center">
-            <img [src]="rcdRenderer.user.profile" width="74" class="mx-auto">
-            <h5 class="text-lg">الاسم: {{ rcdRenderer.user.username }}</h5>
+            <img [src]="rcdRenderer.user.image" width="74" class="mx-auto">
+            <h5 class="text-lg">الاسم: {{ rcdRenderer.user.name }}</h5>
             <span>الترتيب: {{ rcdRenderer.order }}</span>
           </div>
         </map-info-window>

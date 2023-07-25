@@ -6,10 +6,10 @@ export class Service {
   user!: User;
   category!: Category;
   title!: string;
-  details!: string;
-  active!: boolean;
+  details?: string;
+  active?: boolean;
   image?: string;
   images?: string[];
-  createdAt!: string;
-  updatedAt!: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

@@ -1,0 +1,32 @@
+{
+  "name": "khedemat-express",
+  "version": "0.0.1",
+  "description": "Express app for khedemat mobile app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohameden Vall Haden",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1189.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.2.0",
+    "express-jwt": "^6.1.0",
+    "express-rate-limit": "^6.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "multer-s3": "^2.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
