@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:3500',
+  api: 'https://khedemat-f288702c9f00.herokuapp.com',
   mapApiKey: 'AIzaSyDgHUxKkPw186OXTisIdj8EfLidfO7Kc0A',
 };
 
