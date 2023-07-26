@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "64bf0721de3a130ccdda78b8"
+  },
+  "title": "الدهانة",
+  "details": "دهانة المنازل والمكاتب",
+  "active": true,
+  "color": "",
+  "image": "http://localhost:3500/images/service.png",
+  "images": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690240801788"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690240801788"
+    }
+  },
+  "__v": 0
+}]

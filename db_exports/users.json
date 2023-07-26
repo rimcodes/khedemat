@@ -1,0 +1,160 @@
+[{
+  "_id": {
+    "$oid": "64bef651f1a7490c606c4c31"
+  },
+  "name": "haden",
+  "password": "$2b$10$ZYB0N1QUAJwh0VIHcV.PVOKfnSyL0b1lQjfSK06tUlYPByFk1zzQq",
+  "role": "admin",
+  "phone": "47696052",
+  "address": "Nouakchott, Mauritanie",
+  "image": "http://localhost:3500/images/user.png",
+  "images": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690236497050"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690236805996"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64bef6abf1a7490c606c4c35"
+  },
+  "name": "sidi",
+  "password": "$2b$10$OFa56wWs5BiwS6uH87/aeOeNJQdg.pVZWxUqwa7Vs656dQiSDC0lO",
+  "role": "client",
+  "active": true,
+  "phone": "22222222",
+  "address": "Nouakchott, Mauritanie",
+  "image": "http://localhost:3500/images/user.png",
+  "images": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690236587651"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690236587651"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64bef6c9f1a7490c606c4c38"
+  },
+  "name": "havedh",
+  "password": "$2b$10$Qg0Txjedtej/mAe0BQBhx.h473ewVrC8iHFVqml983N.F.tVRJWqG",
+  "role": "client",
+  "active": true,
+  "phone": "44114411",
+  "address": "Nouakchott, Mauritanie",
+  "image": "http://localhost:3500/images/user.png",
+  "images": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690236617894"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690236617894"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64bef6def1a7490c606c4c3b"
+  },
+  "name": "sidi",
+  "password": "$2b$10$c4wBQiKId1qHX3Kpi9mSsO3q5InL1VLOFOoHR3Sq9dI0MCnjghtRe",
+  "role": "worker",
+  "phone": "33333333",
+  "address": "Nouakchott, Mauritanie",
+  "image": "http://localhost:3500/images/user.png",
+  "images": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690236638578"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690236894511"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64bef872f1a7490c606c4c46"
+  },
+  "name": "mehdi",
+  "password": "$2b$10$sorXhDN6hIvw8U98FNXBAeXVa1bKyKopVkswNJ3eCe/CTf6jkjciO",
+  "role": "worker",
+  "active": true,
+  "phone": "44111122",
+  "address": "Nouakchott, Mauritanie",
+  "image": "http://localhost:3500/images/user.png",
+  "images": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690237042762"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690237042762"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64bef884f1a7490c606c4c49"
+  },
+  "name": "Aiche",
+  "password": "$2b$10$jUYQ9UzCmmDaxG5howVV6eDZA90W9m/GuF2ZToc/74Vv0jvga0rJW",
+  "role": "worker",
+  "active": true,
+  "phone": "44221133",
+  "address": "Nouakchott, Mauritanie",
+  "image": "http://localhost:3500/images/user.png",
+  "images": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690237060154"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690237060154"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64bf0296b7429da2c606aaac"
+  },
+  "name": "zeyna",
+  "password": "$2b$10$y3GhF85cgVVSLqny.fMIueZHL3FTMnBFRZ1NqQnfAb2I7NXqnFgBO",
+  "role": "Client",
+  "active": true,
+  "phone": "22494479",
+  "address": "Tavregh zeine",
+  "image": "http://localhost:3500/images/user.png",
+  "images": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690239638532"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690239638532"
+    }
+  },
+  "__v": 0
+}]

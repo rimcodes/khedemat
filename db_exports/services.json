@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "64bff8dc57bc67f32ecdcded"
+  },
+  "category": {
+    "$oid": "64bf0721de3a130ccdda78b8"
+  },
+  "user": {
+    "$oid": "64bef651f1a7490c606c4c31"
+  },
+  "title": "Painting",
+  "price": 5000,
+  "details": "Painting houses and offfices",
+  "active": true,
+  "image": "http://localhost:3500/piblic/images/service.png",
+  "images": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690302684199"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690302684199"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64bff91657bc67f32ecdcdf0"
+  },
+  "category": {
+    "$oid": "64bf0721de3a130ccdda78b8"
+  },
+  "user": {
+    "$oid": "64bef651f1a7490c606c4c31"
+  },
+  "title": "Plummng",
+  "price": 12000,
+  "details": "Plumminghouses and offfices",
+  "active": true,
+  "image": "http://localhost:3500/piblic/images/service.png",
+  "images": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690302742676"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690302742676"
+    }
+  },
+  "__v": 0
+}]

@@ -1,2 +1,4 @@
 node_modules
 .env
+/clients/rcadmin/src/environments/environment.prod.ts
+/db_exports
