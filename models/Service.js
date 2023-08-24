@@ -25,6 +25,10 @@ const serviceSchema = mongoose.Schema(
         description: {
             type: String
         },
+        isFeatured: {
+            type: Boolean,
+            default: false
+        },
         active: {
             type: Boolean,
             default: true

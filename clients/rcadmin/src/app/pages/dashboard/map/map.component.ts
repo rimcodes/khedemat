@@ -41,6 +41,7 @@ export class MapComponent implements OnInit, OnChanges {
   options: google.maps.MapOptions = {
     center: { lat: 18.077819265626548, lng: -15.96880064486457 },
     zoom: 12,
+    mapTypeControl: false
   };
   rcdRenders: RCDrenderer[] = [];
   @ViewChild(MapInfoWindow) infoWindow!: MapInfoWindow;

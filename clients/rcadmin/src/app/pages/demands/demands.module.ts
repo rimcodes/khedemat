@@ -11,6 +11,9 @@ import { DemandsRoutingModule } from './demands-routing.module';
 import { DemandsComponent } from './demands.component';
 import { DemandFormComponent } from './demand-form/demand-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatSlideToggleModule,
   ]
 })
 export class DemandsModule { }

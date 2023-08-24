@@ -27,6 +27,21 @@ const getAllServices = asyncHandler(async (req, res) => {
 })
 
 /**
+ * @desc Get 12 featured services
+ * @route GET /services/featured
+ * @access Public
+ */
+const getFeatured = asyncHandler(async (req, res) => {
+    const featured = await Service.find({ isFeatured: true })
+    
+    if(!featured?.length) {
+        return res.status(400).json({ message: 'No Services featured found'})
+    }
+
+    res.json(featured)
+})
+
+/**
  * @desc Get Singel Services
  * @route Get /services
  * @access Public
@@ -54,15 +69,15 @@ const createNewService = asyncHandler(async (req, res) => {
     // Create a new Service
     const { user, category, title, details, price, description } = req.body
 
-    if (!user || !title || !category ) {
-        return res.status(400).json({ message: 'All fields(user, title, and category) are required'})
+    if ( !title || !category ) {
+        return res.status(400).json({ message: 'All fields(title, and category) are required'})
     }
     
-    // checking user exists
-    const serviceUser = await User.findById(user).exec()
-    if (!serviceUser) {
-        return res.status(400).json({ message: 'The user is invalid' })
-    }
+    // // checking user exists
+    // const serviceUser = await User.findById(user).exec()
+    // if (!serviceUser) {
+    //     return res.status(400).json({ message: 'The user is invalid' })
+    // }
 
     const file = req.file;
     let imagePath;
@@ -172,6 +187,7 @@ const deleteService = asyncHandler(async (req, res) => {
 module.exports = {
     getAllServices,
     getService,
+    getFeatured,
     createNewService,
     updateService,
     deleteService

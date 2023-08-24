@@ -1,8 +1,10 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Service } from 'src/app/models/service.model';
 import { ServicesService } from 'src/app/services/services.service';
+import { DeleteDialogueComponent } from 'src/app/ui/delete-dialogue/delete-dialogue.component';
 
 @Component({
   selector: 'app-services',
@@ -18,73 +20,14 @@ import { ServicesService } from 'src/app/services/services.service';
 })
 export class ServicesComponent implements OnInit {
   services!: Service[]
-  // [
-  //   {
-  //     id: 's1',
-  //     user: {
-  //       id: 'u1',
-  //       name: 'sidi',
-  //       role: 'worker',
-  //       active: true,
-  //       phone: '41234567',
-  //     },
-  //     category: {
-  //       id: 'c1',
-  //       title: 'Painting',
-  //       details: 'Painting houses and offices',
-  //       active: true,
-  //       image: 'assets/holders/cat2.jpg',
-  //     },
-  //     title: 'Painting',
-  //     image: 'assets/holders/cat1.png'
-  //   },
-  //   {
-  //     id: 's2',
-  //     user: {
-  //       id: 'u1',
-  //       name: 'sidi',
-  //       role: 'worker',
-  //       active: true,
-  //       phone: '41234567',
-  //     },
-  //     category: {
-  //       id: 'c1',
-  //       title: 'Painting',
-  //       details: 'Painting houses and offices',
-  //       active: true,
-  //       image: 'assets/holders/cat2.jpg',
-  //     },
-  //     title: 'Plumming',
-  //     image: 'assets/holders/cat2.png'
-  //   },
-  //   {
-  //     id: 's3',
-  //     user: {
-  //       id: 'u1',
-  //       name: 'sidi',
-  //       role: 'worker',
-  //       active: true,
-  //       phone: '41234567',
-  //     },
-  //     category: {
-  //       id: 'c1',
-  //       title: 'Painting',
-  //       details: 'Painting houses and offices',
-  //       active: true,
-  //       image: 'assets/holders/cat2.jpg',
-  //     },
-  //     title: 'Electricity',
-  //     image: 'assets/holders/cat2.png'
-  //   }
-  // ]
 
   dataSource = new MatTableDataSource(this.services);
 
-  columnsToDisplay = ['title', 'category', 'createdAt'];
+  columnsToDisplay = ['title', 'category', 'createdAt', 'buttons'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement!: Service | null;
 
-  constructor(private servicesService: ServicesService) {}
+  constructor(private servicesService: ServicesService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadServices()
@@ -109,4 +52,14 @@ export class ServicesComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  deleteService(service: Service) {
+    const dialogRef = this.dialog.open(DeleteDialogueComponent, {
+      width: '250px',
+      data: { type: 'service', model: service, name: service.title },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.loadServices()
+    });
+  }
 }

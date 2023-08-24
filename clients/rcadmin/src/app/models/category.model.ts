@@ -1,10 +1,9 @@
-import { User } from "./user.model";
-
 export class Category {
   id!: string;
   title!: string;
-  details?: string;
+  details!: string;
   active?: boolean;
+  color?: string;
   image?: string;
   images?: string[];
   createdAt?: string;

@@ -17,7 +17,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="clear">
+    <div class="z-10 rounded-full absolute top-0 left-0 rtl:left-0 rtl:right-5 p-[1px] bg-gray-50">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -27,23 +27,25 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
+    </div>
+
+    <!-- <mat-toolbar color="clear">
       <span>RCAdmin</span>
       <span class="flex-auto"></span>
       <div class="flex items-center gap-2">
-        <img src="assets/holders/user.png" width="48" height="48" alt="user profile" class="rounded-full">
+        <img
+          src="assets/holders/user.png"
+          width="48"
+          height="48"
+          alt="user profile"
+          class="rounded-full"
+        />
         <div class="flex flex-col justify-center">
           <span class="text-lg">Mahmoud</span>
           <span class="text-sm text-neutral-500">Admin</span>
         </div>
       </div>
-      <!-- <button
-        mat-icon-button
-        class="example-icon favorite-icon"
-        aria-label="Example icon-button with heart icon"
-      >
-        <mat-icon>favorite</mat-icon>
-      </button> -->
-    </mat-toolbar>
+    </mat-toolbar> -->
     <!-- Add Content Here -->
     <ng-content></ng-content>
   </mat-sidenav-content>

@@ -53,6 +53,8 @@ router.route('/')
     .patch(uploadS3.single('image'), servicesController.updateService)
     .delete(servicesController.deleteService)
 
+router.route('/featured').get(servicesController.getFeatured)
+
 router.route('/:id')
     .get(servicesController.getService)
 

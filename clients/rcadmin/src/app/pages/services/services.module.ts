@@ -11,6 +11,9 @@ import { ServicesRoutingModule } from './services-routing.module';
 import { ServicesComponent } from './services.component';
 import { ServiceFormComponent } from './service-form/service-form.component';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -20,13 +23,17 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatTableModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     ServicesRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    MatSlideToggleModule,
   ]
 })
 export class ServicesModule { }

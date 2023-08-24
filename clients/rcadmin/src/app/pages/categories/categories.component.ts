@@ -1,33 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 import { Category } from 'src/app/models/category.model';
+import { CategoriesService } from 'src/app/services/categories.service';
+import { DeleteDialogueComponent } from 'src/app/ui/delete-dialogue/delete-dialogue.component';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css']
 })
-export class CategoriesComponent {
-  categories: Category[] = [
-    {
-      id: 'c1',
-      title: 'Category 1',
-      details: 'Some details about category 1',
-      active: true,
-      image: 'assets/holders/cat1.png'
-    },
-    {
-      id: 'c2',
-      title: 'Category 2',
-      details: 'Some details about category 2',
-      active: true,
-      image: 'assets/holders/cat2.jpg'
-    },
-    {
-      id: 'c3',
-      title: 'Category 3',
-      details: 'Some details about category 3',
-      active: true,
-      image: 'assets/holders/cat3.jpg'
-    },
-  ]
+export class CategoriesComponent implements OnInit {
+
+  categories$!: Observable<Category[]>
+
+  constructor(private categoriesService: CategoriesService, private dialog: MatDialog) {}
+
+  ngOnInit(): void {
+      this.categories$ = this.categoriesService.getAllCategories()
+  }
+
+  deleteCategory(category: Category) {
+    const dialogRef = this.dialog.open(DeleteDialogueComponent, {
+      width: '250px',
+      data: { type: 'category', model: category, name: category.title },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      // user.id = result;
+      this.categories$ = this.categoriesService.getAllCategories()
+    });
+  }
+
+
 }

@@ -130,6 +130,9 @@ export class DemandsComponent implements OnInit {
     {
       id: 'd1',
       service: {
+        active: true,
+        isFeatured: true,
+        price: 5000,
         id: 's1',
         user: {
           id: 'u1',
@@ -148,12 +151,12 @@ export class DemandsComponent implements OnInit {
         title: 'Painting',
         image: 'assets/holders/cat1.png'
       },
-      client: {
+      worker: {
         id: 'u1',
         name: 'sidi',
         role: 'worker',
+        phone: '48484848',
         active: true,
-        phone: '41234567',
       },
       user: {
         id: 'u2',
@@ -162,12 +165,13 @@ export class DemandsComponent implements OnInit {
         active: true,
         phone: '41234567',
       },
-      title: 'Painting demand form Arrafat',
-      active: true,
     },
     {
       id: 'd2',
       service: {
+        active: true,
+        isFeatured: true,
+        price: 5000,
         id: 's1',
         user: {
           id: 'u3',
@@ -186,7 +190,7 @@ export class DemandsComponent implements OnInit {
         title: 'Painting',
         image: 'assets/holders/cat2.jpg'
       },
-      client: {
+      worker: {
         id: 'u1',
         name: 'sidi',
         role: 'worker',
@@ -200,12 +204,13 @@ export class DemandsComponent implements OnInit {
         active: true,
         phone: '41234567',
       },
-      title: 'Painting demand form Arrafat',
-      active: true,
     },
     {
       id: 'd2',
       service: {
+        active: true,
+        isFeatured: true,
+        price: 5000,
         id: 's1',
         user: {
           id: 'u1',
@@ -224,7 +229,7 @@ export class DemandsComponent implements OnInit {
         title: 'Painting',
         image: 'assets/holders/cat3.jpg'
       },
-      client: {
+      worker: {
         id: 'u1',
         name: 'sidi',
         role: 'worker',
@@ -238,8 +243,6 @@ export class DemandsComponent implements OnInit {
         active: true,
         phone: '41234567',
       },
-      title: 'Painting demand form Arrafat',
-      active: true,
     },
   ];
 

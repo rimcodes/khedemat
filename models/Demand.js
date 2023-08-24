@@ -15,10 +15,6 @@ const demandSchema = mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
         },
-        title: {
-            type: String,
-            required: true
-        },
         details: {
             type: String
         },
@@ -31,9 +27,6 @@ const demandSchema = mongoose.Schema(
         active: {
             type: Boolean,
             default: true
-        },
-        location: {
-            type: String
         }
     },
     {

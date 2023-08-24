@@ -3,11 +3,14 @@ import { User } from "./user.model";
 
 export class Service {
   id!: string;
-  user!: User;
   category!: Category;
+  user!: User;
   title!: string;
+  price!: number;
   details?: string;
-  active?: boolean;
+  description?: string;
+  isFeatured!: boolean;
+  active!: boolean;
   image?: string;
   images?: string[];
   createdAt?: string;
