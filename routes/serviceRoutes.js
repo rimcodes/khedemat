@@ -50,7 +50,7 @@ const uploadS3 = multer({
 router.route('/')
     .get(servicesController.getAllServices)
     .post(uploadS3.single('image'), servicesController.createNewService)
-    .patch(uploadS3.single('image'), servicesController.updateService)
+    .put(uploadS3.single('image'), servicesController.updateService)
     .delete(servicesController.deleteService)
 
 router.route('/featured').get(servicesController.getFeatured)

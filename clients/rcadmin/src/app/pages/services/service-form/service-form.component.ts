@@ -92,11 +92,12 @@ export class ServiceFormComponent implements OnInit {
         this.editMode = true;
         this.servicesService.getService(params['id']).subscribe((res) => {
           this.serviceForm['id'].setValue(res.id);
-          this.serviceForm['store'].setValue(res.category.id);
+          this.serviceForm['category'].setValue(res.category.id);
           this.serviceForm['title'].setValue(res.title);
           this.serviceForm['price'].setValue(res.price);
           this.serviceForm['details'].setValue(res.details);
           this.serviceForm['active'].setValue(res.active);
+          this.serviceForm['isFeatured'].setValue(res.isFeatured);
           this.serviceForm['image'].setValue(res.image);
         });
       }
@@ -125,6 +126,7 @@ export class ServiceFormComponent implements OnInit {
       price: [''],
       details: [''],
       active: [true],
+      isFeatured: [false],
       image: [''],
     });
   }
