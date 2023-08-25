@@ -110,7 +110,7 @@ const createNewService = asyncHandler(async (req, res) => {
  */
 const updateService = asyncHandler(async (req, res) => {
     // Update a Service
-    const { id, user, category, title, details, description, price, active } = req.body
+    const { id, category, title, details, description, price, active } = req.body
 
     if ( !id ) {
         return res.status(400).json({ message: 'id i required to update'})
@@ -123,15 +123,9 @@ const updateService = asyncHandler(async (req, res) => {
     }
 
     // Check for service with the same title
-    const duplicate = await Service.findOne({ title }).lean().exec()
+    const duplicate = await Service.findOne({ title })
     if (duplicate && duplicate?._id.toString() !== id) {
         return res.status(409).json({ message: 'Duplicate note title' })
-    }
-
-    // checking user exists
-    const serviceUser = await User.findById(user).exec()
-    if (!serviceUser) {
-        return res.status(400).json({ message: 'The user is invalid' })
     }
 
     const file = req.file;
@@ -145,7 +139,6 @@ const updateService = asyncHandler(async (req, res) => {
         service.image = imagePath
     }
 
-    service.user = user
     service.title = title
     service.details = details
     service.description = description
